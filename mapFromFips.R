@@ -1,5 +1,12 @@
+#source functions used in code from github
+library(devtools)
+github = "https://raw.githubusercontent.com/kwiter/mckFUNCTIONS/master/mckFUNCTIONS.r"
+source_url(github)
 
-path = '/home/mckwit/Downloads/'
+#set working directory
+setwd('/home/mckwit/Dropbox/Guided')
+#path to your data
+path = 'Data/'
 
 #uses custom function from mckFUNCTIONS to open zip into temp folder and pass paths to user
 tmp = pathZip(paste0(path,'ld0814.zip'),fileName = character(),readFiles=T)
@@ -10,8 +17,8 @@ dat = read.sas7bdat(tmp$filePath) #read sas file
 #library(haven)
 #dat = read_sas(tmp$filePath) # this is supposed to be a faster parser reuires haven
 
-saveRDS(dat,file='lyme.rds') 
-dat = readRDS(file='lyme.rds') #use saved r file
+saveRDS(dat,file='Data/lyme.rds') 
+dat = readRDS(file='Data/lyme.rds') #use saved r file
 
 library(UScensus2010)
 library(maptools)
@@ -76,7 +83,7 @@ for(i in 1:len(badFips)){
   dat[whrB,'fips'] = paste0(dat[whrB,'state1'] , sample(names(probs),1,prob=probs))
 }
 
-saveRDS(dat,file='lyme.rds') #save transfomed data
+saveRDS(dat,file='Data/lyme.rds') #save transfomed data
 
 #match county map fips to data fips
 lyCo = table(dat[,'fips'])
