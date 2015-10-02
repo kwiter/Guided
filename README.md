@@ -7,3 +7,6 @@ This code combines us state and county shapefiles with data organized by fip cod
 
 Values are matched and map color is coded based on the value
 
+![LymeMap](https://raw.githubusercontent.com/kwiter/Guided/master/LymeMap.png)
+
+
