@@ -1,6 +1,6 @@
 # Guided
 
-This repository contains code meant as a guide for random projects
+Code for others' projects
 
 #mapFromFips.r
 This code combines us state and county shapefiles with data organized by fip codes
