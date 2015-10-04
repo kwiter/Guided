@@ -1,6 +1,5 @@
 # Guided
 
-Code for others' projects
 
 #mapFromFips.r
 This code combines us state and county shapefiles with data organized by fip codes
